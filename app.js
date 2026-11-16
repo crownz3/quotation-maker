@@ -926,11 +926,11 @@ function updateTheme() {
   if (!currentQuote) return;
   const primary = document.getElementById('cfg_primaryColor').value || '#1558a0';
   const headerText = document.getElementById('cfg_headerTextColor').value || '#ffffff';
-  
+
   currentQuote.theme = currentQuote.theme || {};
   currentQuote.theme.primaryColor = primary;
   currentQuote.theme.headerTextColor = headerText;
-  
+
   document.documentElement.style.setProperty('--primary', primary);
   document.documentElement.style.setProperty('--header-text', headerText);
 
@@ -1271,7 +1271,7 @@ function autoCalculateTotalBanner() {
   const suffix = curr === 'INR' ? ' INR' : '';
   const formatted = total.toLocaleString('en-IN');
   const banner = `TOTAL PROJECT FEE PAYABLE TO FLOW: ${prefix}${formatted}${suffix}`;
-  
+
   document.getElementById('cfg_totalBannerText').value = banner;
   currentQuote.financialSection.totalBannerText = banner;
   renderPreview();
@@ -1412,7 +1412,7 @@ function onCustomLogoUpload(event) {
   const file = event.target.files[0];
   if (!file) return;
   const reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = function (e) {
     currentQuote.company.customLogoData = e.target.result;
     currentQuote.company.logoType = 'custom';
     document.getElementById('cfg_logoType').value = 'custom';
@@ -1452,7 +1452,7 @@ function renderPreview() {
   }
 
   const allItems = q.deliverablesSection.items || [];
-  
+
   // Deliverable Table Row Helper
   function renderDeliverableRows(items, offsetIndex = 0) {
     return items.map((item, idx) => {
@@ -1826,12 +1826,12 @@ function loadPreset(presetKey) {
     else if (presetKey === 'software') currentQuote = JSON.parse(JSON.stringify(PRESET_SOFTWARE));
     else if (presetKey === 'ecommerce') currentQuote = JSON.parse(JSON.stringify(PRESET_ECOMMERCE));
     else if (presetKey === 'blank') currentQuote = JSON.parse(JSON.stringify(PRESET_BLANK));
-    
+
     populateEditorFromState();
     updateTheme();
     renderPreview();
     saveDraftToStorage();
-    
+
     // Close dropdown
     const menu = document.getElementById('templateMenu');
     menu.classList.remove('show');
@@ -1862,7 +1862,7 @@ function getLibrary() {
   if (!raw) return [];
   try {
     return JSON.parse(raw);
-  } catch(e) {
+  } catch (e) {
     return [];
   }
 }
@@ -1961,7 +1961,7 @@ function importJSON(event) {
   const file = event.target.files[0];
   if (!file) return;
   const reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = function (e) {
     try {
       const data = JSON.parse(e.target.result);
       if (data && data.company && data.docMeta && data.deliverablesSection) {
@@ -1974,7 +1974,7 @@ function importJSON(event) {
       } else {
         alert('Invalid quotation JSON format.');
       }
-    } catch(err) {
+    } catch (err) {
       alert('Error parsing JSON file: ' + err.message);
     }
   };
@@ -2044,11 +2044,11 @@ function formatInline(str) {
 
 function shadeColor(color, percent) {
   let num = parseInt(color.replace("#", ""), 16),
-      amt = Math.round(2.55 * percent),
-      R = (num >> 16) + amt,
-      B = (num >> 8 & 0x00FF) + amt,
-      G = (num & 0x0000FF) + amt;
-  return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (B<255?B<1?0:B:255)*0x100 + (G<255?G<1?0:G:255)).toString(16).slice(1);
+    amt = Math.round(2.55 * percent),
+    R = (num >> 16) + amt,
+    B = (num >> 8 & 0x00FF) + amt,
+    G = (num & 0x0000FF) + amt;
+  return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (B < 255 ? B < 1 ? 0 : B : 255) * 0x100 + (G < 255 ? G < 1 ? 0 : G : 255)).toString(16).slice(1);
 }
 
 function hexToRgba(hex, alpha) {
@@ -2057,6 +2057,6 @@ function hexToRgba(hex, alpha) {
     c = [c[0], c[0], c[1], c[1], c[2], c[2]];
   }
   let num = parseInt(c.join(''), 16);
-  return `rgba(${(num>>16)&255}, ${(num>>8)&255}, ${num&255}, ${alpha})`;
+  return `rgba(${(num >> 16) & 255}, ${(num >> 8) & 255}, ${num & 255}, ${alpha})`;
 }
 
