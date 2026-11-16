@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow - Professional Quotation Maker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="app-header no-print">
+    <div class="brand-group">
+      <div class="brand-logo">
+        <svg width="28" height="28" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 10 C15 10 5 20 5 30 C5 40 15 50 30 50 C42 50 50 35 50 30 C50 25 58 10 70 10 C85 10 95 20 95 30 C95 40 85 50 70 50 C58 50 50 35 50 30 C50 25 42 10 30 10 Z" stroke="url(#paint0_linear)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="paint0_linear" x1="5" y1="30" x2="95" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00AEEF"/>
+              <stop offset="1" stop-color="#0D47A1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div>
+        <h1 class="app-title">Flow Quotation Maker</h1>
+        <span class="app-subtitle">Customizable Proposal & Agreement Generator</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Templates dropdown -->
+      <div class="action-dropdown">
+        <button id="templateBtn" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Templates
+        </button>
+        <div id="templateMenu" class="dropdown-menu">
+          <button class="dropdown-item" onclick="loadPreset('electrical')">
+            <strong style="color:#0284c7;">⚡ Electrical Vibers (VoltMaster)</strong>
+            <small>Electrician Booking & Hardware Store Platform</small>
+          </button>
+          <button class="dropdown-item" onclick="loadPreset('deendesk')">
+            <strong style="color:var(--primary);">★ DeenDesk Madrasa ERP</strong>
+            <small>Full Ownership Buyout (55k paid + 35k buyout)</small>
+          </button>
+          <button class="dropdown-item" onclick="loadPreset('mutton')">
+            <strong>Ammar Appa Mutton Shop</strong>
+            <small>Exact replica from example-quotations.pdf</small>
+          </button>
+          <button class="dropdown-item" onclick="loadPreset('software')">
+            <strong>Standard Web & Mobile App</strong>
+            <small>Clean multi-platform project scope</small>
+          </button>
+          <button class="dropdown-item" onclick="loadPreset('ecommerce')">
+            <strong>E-Commerce & Retail Store</strong>
+            <small>Catalog, Cart, Payment & Delivery</small>
+          </button>
+          <button class="dropdown-item" onclick="loadPreset('blank')">
+            <strong>Blank Quotation</strong>
+            <small>Start from scratch with custom fields</small>
+          </button>
+        </div>
+      </div>
+
+      <!-- Saved quotes library -->
+      <button id="libraryBtn" class="btn btn-secondary" onclick="openLibraryModal()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+        Saved Quotes
+      </button>
+
+      <!-- Save Button -->
+      <button id="saveDraftBtn" class="btn btn-secondary" onclick="saveToLibrary()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+        Save
+      </button>
+
+      <!-- Backup JSON -->
+      <button class="btn btn-secondary" onclick="exportJSON()" title="Export JSON backup">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Export
+      </button>
+
+      <label class="btn btn-secondary file-input-label" title="Import JSON file">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+        Import
+        <input type="file" id="importJsonInput" accept=".json" style="display:none;" onchange="importJSON(event)">
+      </label>
+
+      <!-- View mode switch -->
+      <div class="view-toggle">
+        <button id="splitViewBtn" class="toggle-btn active" onclick="setViewMode('split')" title="Side-by-side Editor & Preview">Split</button>
+        <button id="previewOnlyBtn" class="toggle-btn" onclick="setViewMode('preview')" title="Full Document Preview">Preview</button>
+        <button id="editorOnlyBtn" class="toggle-btn" onclick="setViewMode('editor')" title="Full Editor">Editor</button>
+      </div>
+
+      <!-- Print / Export to PDF -->
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-layout" id="appLayout">
+    <!-- LEFT PANEL: Editor -->
+    <aside class="editor-panel no-print" id="editorPanel">
+      <div class="editor-header">
+        <h2>Customization Studio</h2>
+        <span class="editor-hint">All changes update live in the quotation preview</span>
+      </div>
+
+      <div class="accordion-container">
+        <!-- 1. Header & Branding -->
+        <details class="accordion-item" open>
+          <summary class="accordion-title">
+            <span class="icon">🏢</span> Company & Header Details
+          </summary>
+          <div class="accordion-content">
+            <div class="form-group">
+              <label>Company / Provider Name</label>
+              <input type="text" id="cfg_companyName" oninput="updateQuotation()">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number(s)</label>
+                <input type="text" id="cfg_companyPhone" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Email / Web (Optional)</label>
+                <input type="text" id="cfg_companyEmail" oninput="updateQuotation()" placeholder="contact@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Company Address</label>
+              <textarea id="cfg_companyAddress" rows="2" oninput="updateQuotation()"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Logo Type</label>
+                <select id="cfg_logoType" onchange="onLogoTypeChange()">
+                  <option value="builtin">Built-in Flow Gradient Loop</option>
+                  <option value="custom">Upload Custom Logo</option>
+                  <option value="none">No Logo (Text Only)</option>
+                </select>
+              </div>
+              <div class="form-group" id="customLogoGroup" style="display:none;">
+                <label>Choose Logo File</label>
+                <input type="file" id="cfg_customLogoFile" accept="image/*" onchange="onCustomLogoUpload(event)">
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- 2. Document & Client Meta -->
+        <details class="accordion-item" open>
+          <summary class="accordion-title">
+            <span class="icon">📋</span> Document & Client Info
+          </summary>
+          <div class="accordion-content">
+            <div class="form-group">
+              <label>Document Title</label>
+              <input type="text" id="cfg_docTitle" oninput="updateQuotation()">
+            </div>
+            <div class="form-row three-col">
+              <div class="form-group">
+                <label>Document Ref</label>
+                <div class="input-with-button">
+                  <input type="text" id="cfg_docRef" oninput="updateQuotation()">
+                  <button type="button" class="btn-mini" onclick="generateDocRef()" title="Generate new Ref">↻</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Agreement Date</label>
+                <input type="text" id="cfg_agreementDate" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Delivery Date</label>
+                <input type="text" id="cfg_deliveryDate" oninput="updateQuotation()">
+              </div>
+            </div>
+
+            <hr class="divider">
+            <h4 class="sub-heading">Client Details</h4>
+            <div class="form-group">
+              <label>Client Business Name</label>
+              <input type="text" id="cfg_clientName" oninput="updateQuotation()">
+            </div>
+            <div class="form-group">
+              <label>Client Address / City</label>
+              <input type="text" id="cfg_clientAddress" oninput="updateQuotation()">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Contact Person & Designation</label>
+                <input type="text" id="cfg_clientContact" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Client Phone Number</label>
+                <input type="text" id="cfg_clientPhone" oninput="updateQuotation()">
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- 3. Deliverables & Scope of Work -->
+        <details class="accordion-item" open>
+          <summary class="accordion-title">
+            <span class="icon">📦</span> Section 1: Scope of Work & Deliverables
+            <span class="badge" id="deliverablesCountBadge">0</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="form-row">
+              <div class="form-group flex-2">
+                <label>Section Title</label>
+                <input type="text" id="cfg_s1Title" oninput="updateQuotation()">
+              </div>
+            </div>
+            <div id="deliverablesList" class="items-list">
+              <!-- Rendered via JS -->
+            </div>
+            <button type="button" class="btn btn-outline full-width" onclick="addDeliverableItem()">
+              + Add Deliverable Module
+            </button>
+          </div>
+        </details>
+
+        <!-- 4. Financial Terms & Commercial Breakdown -->
+        <details class="accordion-item" open>
+          <summary class="accordion-title">
+            <span class="icon">💰</span> Section 2: Financial Terms & Breakdown
+            <span class="badge" id="financialCountBadge">0</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="form-row">
+              <div class="form-group flex-2">
+                <label>Section Title</label>
+                <input type="text" id="cfg_s2Title" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Currency Symbol</label>
+                <select id="cfg_currency" onchange="updateQuotation()">
+                  <option value="INR">INR (Rs. / ₹)</option>
+                  <option value="USD">USD ($)</option>
+                  <option value="EUR">EUR (€)</option>
+                  <option value="GBP">GBP (£)</option>
+                  <option value="AED">AED</option>
+                  <option value="SAR">SAR</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="financialList" class="items-list">
+              <!-- Rendered via JS -->
+            </div>
+            <button type="button" class="btn btn-outline full-width" onclick="addFinancialItem()">
+              + Add Commercial Line Item
+            </button>
+
+            <hr class="divider">
+            <div class="form-group">
+              <label>Total Fee Banner Text (Bottom of Table)</label>
+              <div class="input-with-button">
+                <input type="text" id="cfg_totalBannerText" oninput="updateQuotation()">
+                <button type="button" class="btn-mini" onclick="autoCalculateTotalBanner()" title="Auto Compute from items">Auto Sum</button>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- 5. Dynamic Additional Sections (Policies, Rationale, Support) -->
+        <details class="accordion-item" open>
+          <summary class="accordion-title">
+            <span class="icon">📑</span> Additional Sections & Policies (Rationale, Support, etc.)
+            <span class="badge" id="customSectionsBadge">0</span>
+          </summary>
+          <div class="accordion-content">
+            <div id="customSectionsList" class="custom-sections-list">
+              <!-- Rendered via JS -->
+            </div>
+            <button type="button" class="btn btn-outline full-width" onclick="addCustomSection()">
+              + Add New Policy / Terms Section
+            </button>
+          </div>
+        </details>
+
+        <!-- 6. Sign-off & Legal Acceptance -->
+        <details class="accordion-item">
+          <summary class="accordion-title">
+            <span class="icon">✍️</span> Sign-off & Legal Agreement
+          </summary>
+          <div class="accordion-content">
+            <div class="form-group">
+              <label>Section Header</label>
+              <input type="text" id="cfg_signoffTitle" oninput="updateQuotation()">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Service Provider Box Title</label>
+                <input type="text" id="cfg_signProviderTitle" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Service Provider Subtitle</label>
+                <input type="text" id="cfg_signProviderSubtitle" oninput="updateQuotation()">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Provider Rep Name</label>
+                <input type="text" id="cfg_signProviderName" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Provider Date Text</label>
+                <input type="text" id="cfg_signProviderDate" oninput="updateQuotation()">
+              </div>
+            </div>
+
+            <hr class="divider">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Client Box Title</label>
+                <input type="text" id="cfg_signClientTitle" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Client Subtitle</label>
+                <input type="text" id="cfg_signClientSubtitle" oninput="updateQuotation()">
+              </div>
+            </div>
+            <div class="form-row three-col">
+              <div class="form-group">
+                <label>Client Rep Name</label>
+                <input type="text" id="cfg_signClientName" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Client Phone / Title</label>
+                <input type="text" id="cfg_signClientPhone" oninput="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Client Date Text</label>
+                <input type="text" id="cfg_signClientDate" oninput="updateQuotation()">
+              </div>
+            </div>
+
+            <hr class="divider">
+            <div class="form-group">
+              <label>Legal Binding Disclaimer Note (Bottom)</label>
+              <textarea id="cfg_legalNote" rows="3" oninput="updateQuotation()"></textarea>
+            </div>
+          </div>
+        </details>
+
+        <!-- 7. Colors & Styling -->
+        <details class="accordion-item">
+          <summary class="accordion-title">
+            <span class="icon">🎨</span> Theme, Accent Colors & Page Breaks
+          </summary>
+          <div class="accordion-content">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Primary Accent Color</label>
+                <input type="color" id="cfg_primaryColor" value="#1558a0" onchange="updateTheme()">
+              </div>
+              <div class="form-group">
+                <label>Table Header Text Color</label>
+                <input type="color" id="cfg_headerTextColor" value="#ffffff" onchange="updateTheme()">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Quick Presets</label>
+              <div class="color-presets">
+                <button type="button" class="color-pill" style="background:#1558a0;" onclick="setColor('#1558a0')">Flow Royal Blue</button>
+                <button type="button" class="color-pill" style="background:#0284c7;" onclick="setColor('#0284c7')">Ocean Cyan</button>
+                <button type="button" class="color-pill" style="background:#0f766e;" onclick="setColor('#0f766e')">Teal Emerald</button>
+                <button type="button" class="color-pill" style="background:#312e81;" onclick="setColor('#312e81')">Deep Indigo</button>
+                <button type="button" class="color-pill" style="background:#18181b;" onclick="setColor('#18181b')">Monochrome</button>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Deliverables on Page 1</label>
+                <input type="number" id="cfg_page1ItemsCount" min="3" max="16" value="7" onchange="updateQuotation()">
+              </div>
+              <div class="form-group">
+                <label>Preview Display Mode</label>
+                <select id="cfg_docLayoutMode" onchange="updateQuotation()">
+                  <option value="pages" selected>Multi-Page Sheets (A4 Paper View)</option>
+                  <option value="continuous">Continuous Single Page View</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="cfg_manualPageBreaks" onchange="updateQuotation()" checked>
+                Enable 4-Page PDF Document Structure (Matches example-quotations.pdf)
+              </label>
+            </div>
+          </div>
+        </details>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANEL: Live Document Preview -->
+    <section class="preview-panel" id="previewPanel">
+      <div class="preview-toolbar no-print">
+        <div class="preview-info">
+          <span>Live Quotation Preview</span>
+          <span class="dot">•</span>
+          <span id="pageCountInfo">A4 Standard Document</span>
+        </div>
+        <div class="preview-controls">
+          <button class="btn-ctrl" onclick="zoomDoc(-0.1)" title="Zoom Out">-</button>
+          <span id="zoomLevelText">100%</span>
+          <button class="btn-ctrl" onclick="zoomDoc(0.1)" title="Zoom In">+</button>
+          <button class="btn-ctrl" onclick="resetZoom()" title="Reset Zoom">Fit</button>
+        </div>
+      </div>
+
+      <div class="preview-viewport" id="previewViewport">
+        <!-- The Printable Document Container (Matches PDF Exactly) -->
+        <div class="quotation-document" id="quotationDoc">
+          <!-- Rendered dynamically via JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Saved Quotes Modal -->
+  <div id="libraryModal" class="modal-backdrop no-print" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Quotations Library</h3>
+        <button class="close-btn" onclick="closeLibraryModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Manage quotes stored in your browser's local memory. You can switch between them anytime.</p>
+        <div class="library-actions-row">
+          <button class="btn btn-primary" onclick="createNewQuoteFromCurrent()">+ Save Current as New</button>
+        </div>
+        <div id="savedQuotesList" class="saved-quotes-list">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeLibraryModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

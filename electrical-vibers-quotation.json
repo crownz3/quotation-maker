@@ -1,0 +1,257 @@
+{
+  "id": "quote_electrical_vibers",
+  "title": "Electrical Vibers - Service & E-Commerce Platform",
+  "updatedAt": "2026-11-16T17:20:00.000Z",
+  "theme": {
+    "primaryColor": "#0284c7",
+    "headerTextColor": "#ffffff",
+    "manualPageBreaks": true,
+    "page1ItemsCount": 7,
+    "docLayoutMode": "pages"
+  },
+  "company": {
+    "name": "Flow - Smart Web & Hybrid Apps",
+    "phone": "+91 8903424281",
+    "email": "contact@flowapps.in",
+    "address": "117 Siddiq Nagar, Melapalayam, Tirunelveli – 627 005, Tamil Nadu",
+    "logoType": "builtin",
+    "customLogoData": ""
+  },
+  "docMeta": {
+    "title": "PROJECT QUOTATION & SERVICE AGREEMENT",
+    "ref": "FLOW-VIBE-2026-004",
+    "agreementDate": "November 16, 2026",
+    "deliveryDate": "To be confirmed on sign-off"
+  },
+  "client": {
+    "name": "Electrical Vibers (VoltMaster Electricals)",
+    "address": "Tirunelveli, Tamil Nadu",
+    "contact": "Proprietor / Service Lead",
+    "phone": "+91 9XXXXXXXXX"
+  },
+  "deliverablesSection": {
+    "title": "1. SCOPE OF WORK & DELIVERABLES",
+    "items": [
+      {
+        "module": "Customer Web & Mobile App\n(Android & PWA)",
+        "desc": "Unified customer portal: service booking, electrical product catalog browsing, cart, instant checkout, address & location pincode check, and live service/order tracking.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Electrical Service Booking Engine",
+        "desc": "Intuitive appointment scheduler for home/commercial electrical services (wiring, fan/light fittings, MCB repair, inverters). Slot picker, emergency service toggle, and upfront estimation.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Electrical Hardware & Products Store",
+        "desc": "Product catalog with categories (Switches, Sockets, Wires & Cables, MCBs, LED Lighting, Inverter Batteries, Tools). Product variants, stock status, and specifications sheet.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Razorpay Payment Gateway & UPI Flow",
+        "desc": "Integrated Razorpay checkout: Direct UPI intent (GPay, PhonePe, Paytm), credit/debit cards, net banking, plus Cash on Delivery (COD) / Pay-after-Service workflow.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Admin Management Dashboard",
+        "desc": "Centralized operations portal: incoming service requests queue, technician dispatch & scheduling, product inventory CRUD, banner management, and sales summaries.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Electrician / Field Staff Module",
+        "desc": "Field technician interface: assigned work orders, customer click-to-call, GPS direction navigation, status updates (On the way, In-progress, Completed), and digital signature/receipt.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Real-Time Order & Service Tracking",
+        "desc": "Multi-stage live tracking: Request Placed → Technician Assigned → Work in Progress → Completed / Order Delivered. Automated SMS/WhatsApp notifications.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Tamil & English Bilingual UI",
+        "desc": "Full bilingual support in Tamil and English with instant language toggle. All service labels, categories, and notifications adapt to the selected language.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Customer Profile & Saved Addresses",
+        "desc": "Firebase Phone OTP authentication, profile dashboard, multiple saved service addresses (Home, Office, Shop), and historical booking records with downloadable invoices.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Promotional Banners & Coupons Engine",
+        "desc": "Admin-managed promotional banners, seasonal discounts, festival coupon codes, and announcement tickers across customer screens.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Cloud Backend & Firebase Hosting",
+        "desc": "Cloud Firestore real-time database, Firebase Auth, Cloud Storage for service completion photos, and Firebase Hosting with SSL certificate — first year FREE.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Android Production APK / Play Store Build",
+        "desc": "Production-ready APK/AAB build through Ionic Capacitor. Google Play Store listing guidance (Developer account fee Rs.2,070 paid directly by client).",
+        "status": "SEE NOTE"
+      }
+    ]
+  },
+  "financialSection": {
+    "title": "2. FINANCIAL TERMS & COMMERCIAL BREAKDOWN",
+    "currency": "INR",
+    "items": [
+      {
+        "title": "End-to-End Application Design, Engineering & Production Deployment",
+        "desc": "(Customer App, Electrician Module, Admin Panel, Service Booking Engine, Hardware Store, Razorpay Integration, All 12 Modules above)",
+        "amountStr": "Rs.40,000",
+        "numericVal": 40000,
+        "type": "normal"
+      },
+      {
+        "title": "Initial Advance Payment Received",
+        "desc": "(50% mobilization advance payment — Received and Credited)",
+        "amountStr": "Rs.20,000 [PAID / CREDITED]",
+        "numericVal": 0,
+        "type": "paid"
+      },
+      {
+        "title": "Final Balance Due upon Production Delivery & Handover",
+        "desc": "(Remaining 50% balance payable on final app handover & verification)",
+        "amountStr": "Rs.20,000 [DUE ON DELIVERY]",
+        "numericVal": 20000,
+        "type": "highlight"
+      },
+      {
+        "title": "First Year Firebase Hosting, Firestore Database & SSL Provisioning",
+        "desc": "(Valid from sign-off date through 12 months after production delivery)",
+        "amountStr": "FREE (Rs.0)",
+        "numericVal": 0,
+        "type": "free"
+      },
+      {
+        "title": "Complimentary 1-Year Bug Fixes, Security Patches & Technical Support",
+        "desc": "(Direct WhatsApp & Phone priority assistance during business hours)",
+        "amountStr": "INCLUDED (Rs.0)",
+        "numericVal": 0,
+        "type": "included"
+      },
+      {
+        "title": "Annual Maintenance, Hosting Renewal & Continued Support — from Year 2",
+        "desc": "(Covers framework updates, database backup & OS compatibility — See Section 3)",
+        "amountStr": "Rs.1,299 / year",
+        "numericVal": 0,
+        "type": "recurring"
+      },
+      {
+        "title": "Google Play Store Developer Account Fee",
+        "desc": "(One-time Rs.2,070 — paid directly by client to Google)",
+        "amountStr": "Direct by Client",
+        "numericVal": 0,
+        "type": "direct"
+      },
+      {
+        "title": "Payment Gateway Transaction Charges (Razorpay)",
+        "desc": "(Standard 2% + GST per transaction — deducted automatically by gateway)",
+        "amountStr": "Direct by Gateway",
+        "numericVal": 0,
+        "type": "direct"
+      }
+    ],
+    "totalBannerText": "TOTAL PROJECT FEE: Rs.40,000 INR | PAID: Rs.20,000 | BALANCE DUE: Rs.20,000 INR"
+  },
+  "customSections": [
+    {
+      "id": "sec_viber_rationale",
+      "title": "3. RECOMMENDED ANNUAL MAINTENANCE CHARGE — RATIONALE",
+      "bullets": [
+        {
+          "prefix": "Nominal Annual Fee from Year 2:",
+          "text": "Rs.1,299/year (approx. Rs.108/month) — Specially discounted maintenance package structured exclusively for Electrical Vibers."
+        },
+        {
+          "prefix": "Firebase Hosting & Database:",
+          "text": "Covers Firestore reads/writes, real-time booking synchronization, product image hosting, and SSL certificate renewals."
+        },
+        {
+          "prefix": "Bug Fixes & System Updates:",
+          "text": "Covers Android OS compatibility updates, Ionic/Angular security patches, and minor UI adjustments."
+        },
+        {
+          "prefix": "Unbeatable Value Comparison:",
+          "text": "Commercial service-booking platforms typically incur Rs.8,000–Rs.15,000/year in vendor maintenance. Flow's nominal Rs.1,299/year rate represents a long-term partnership commitment."
+        },
+        {
+          "prefix": "Payment Flexibility:",
+          "text": "Annual fee of Rs.1,299 will apply from the 13th month onwards, payable annually."
+        }
+      ]
+    },
+    {
+      "id": "sec_viber_policies",
+      "title": "4. FINANCIAL TERMS & HOSTING POLICIES SUMMARY",
+      "bullets": [
+        {
+          "prefix": "Total Project Fee:",
+          "text": "Rs.40,000 INR for complete design, engineering, and handover of the working application."
+        },
+        {
+          "prefix": "Payment Milestones:",
+          "text": "50% advance (Rs.20,000) received and acknowledged; remaining 50% (Rs.20,000) due upon final delivery & staff handover."
+        },
+        {
+          "prefix": "First Year Free Hosting:",
+          "text": "Firebase cloud hosting and database provisioning are 100% FREE for the first 12 months from delivery date, compliments of Flow."
+        },
+        {
+          "prefix": "Post Year-1 Annual Charge:",
+          "text": "Annual maintenance & cloud renewal fee of Rs.1,299/year will apply from the 13th month onwards."
+        },
+        {
+          "prefix": "12 Months Free Bug Fixes:",
+          "text": "All bugs, crashes, and performance issues reported within 12 months will be resolved at zero additional charge."
+        },
+        {
+          "prefix": "Scope Additions:",
+          "text": "Any new third-party integrations (e.g. automated IVR calling, custom accounting software sync) outside the agreed 12 modules will be quoted separately."
+        }
+      ]
+    },
+    {
+      "id": "sec_viber_support",
+      "title": "5. MAINTENANCE, SUPPORT & FUTURE REQUIREMENTS",
+      "bullets": [
+        {
+          "prefix": "1-Year Complimentary Maintenance:",
+          "text": "Bug fixes, security patches, framework compatibility updates, and monitoring from delivery date to delivery date + 12 months."
+        },
+        {
+          "prefix": "Priority Support Channel:",
+          "text": "Direct WhatsApp and phone assistance via +91 8903424281 during business hours (Mon–Sat, 9 AM – 6 PM IST)."
+        },
+        {
+          "prefix": "Future Feature Roadmap (Optional Additions):",
+          "text": "Customer loyalty points, electrician rating & reviews, recurring AMC electrical service contracts, and automated WhatsApp order alerts."
+        },
+        {
+          "prefix": "Data Ownership:",
+          "text": "All customer profiles, service records, and catalog data belong 100% to Electrical Vibers. Flow provides full data export upon request."
+        }
+      ]
+    }
+  ],
+  "signoff": {
+    "title": "SIGN-OFF & ACCEPTANCE",
+    "providerBox": {
+      "title": "For FLOW - SMART WEB & HYBRID APPS",
+      "subtitle": "(Service Provider)",
+      "repName": "Flow Representative",
+      "date": "November 16, 2026"
+    },
+    "clientBox": {
+      "title": "For ELECTRICAL VIBERS",
+      "subtitle": "(Client Representative)",
+      "repName": "Proprietor / Service Lead",
+      "phone": "+91 9XXXXXXXXX",
+      "date": "November 16, 2026"
+    },
+    "legalNote": "Note: This document constitutes a legally binding service agreement upon signature by both parties. All amounts are in Indian Rupees (INR). Flow – Smart Web & Hybrid Apps reserves the right to pause or terminate services in case of non-payment beyond 30 days of the agreed due date."
+  }
+}
