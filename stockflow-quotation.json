@@ -1,0 +1,250 @@
+{
+  "id": "quote_stockflow_shiek_enterprises",
+  "title": "StockFlow - POS & Inventory ERP (Shiek Enterprises)",
+  "updatedAt": "2026-11-19T11:58:00.000Z",
+  "theme": {
+    "primaryColor": "#1d4ed8",
+    "headerTextColor": "#ffffff",
+    "manualPageBreaks": true,
+    "page1ItemsCount": 7,
+    "docLayoutMode": "pages"
+  },
+  "company": {
+    "name": "Flow - Smart Web & Hybrid Apps",
+    "phone": "+91 8903424281",
+    "email": "contact@flowapps.in",
+    "address": "117 Siddiq Nagar, Melapalayam, Tirunelveli – 627 005, Tamil Nadu",
+    "logoType": "builtin",
+    "customLogoData": ""
+  },
+  "docMeta": {
+    "title": "PROJECT QUOTATION & SERVICE AGREEMENT",
+    "ref": "FLOW-STK-2026-005",
+    "agreementDate": "November 19, 2026",
+    "deliveryDate": "10–14 business days from sign-off"
+  },
+  "client": {
+    "name": "Shiek Enterprises",
+    "address": "Tirunelveli, Tamil Nadu",
+    "contact": "Proprietor / Management Executive",
+    "phone": "+91 9XXXXXXXXX"
+  },
+  "deliverablesSection": {
+    "title": "1. SCOPE OF WORK & PLATFORM DELIVERABLES",
+    "items": [
+      {
+        "module": "High-Speed Floor POS & Dispatch Terminal",
+        "desc": "Rapid touch & barcode billing terminal, instant product search, discounts, multi-tender payments (Cash, Card, UPI, Customer Khata), instant receipt generation, and real-time inventory deduction.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Dynamic Inventory & Multi-Batch Tracking (FIFO / LIFO / WAC)",
+        "desc": "Inward batch/lot tracking with landed cost (freight, tax). Supports FIFO, LIFO, and Weighted Average Costing (WAC) with low-stock alerts and out-of-stock prevention.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Barcode & QR Label Printing Engine & Ledger",
+        "desc": "Built-in barcode & QR code generator for items and batches. Supports thermal label formats (stickers, tags) and searchable Barcode Audit Ledger for tracking item movement.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Purchasing, Supplier Directory & GRN Management",
+        "desc": "Procurement engine with Goods Received Notes (GRN), vendor records, inward purchase bills, supplier khata ledger, and purchase history tracking.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Customer CRM, Khata Credit Ledger & Dues Management",
+        "desc": "Customer directory with purchase logs, credit limits, khata ledger, partial payment tracking, settlement receipts, and auto-computed outstanding balances printed on receipts.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Thermal Bluetooth, USB & Desktop ESC/POS Printing",
+        "desc": "Direct printing to 58mm & 80mm ESC/POS Bluetooth printers, desktop receipt printers, and full A4/A5 tax invoices with GST tax breakdown and HSN summaries.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Daily Cash Drawer, Shift Reconciliation & Expense Tracker",
+        "desc": "Shift management with opening cash float, real-time sales tally, daily expense categorization (supplies, tea, transport), and day-end drawer reconciliation.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Sales Returns, Damage Stock & Broken Inventory Write-Offs",
+        "desc": "Fast returns against invoice or direct exchange, automated restocking or damage quarantine, credit note generation, and dedicated broken stock ledger.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Role-Based Access Control (RBAC) & Staff Security",
+        "desc": "Granular multi-tier roles: Super Admin, Store Admin, Cashier, and Sales Staff. Protects sensitive purchase costs, margins, and financial reports from floor staff.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Business Intelligence, Sales Analytics & GST Reports",
+        "desc": "Interactive dashboard with daily/monthly sales volume, profit & loss analysis, fast vs dead stock analytics, customer dues, and 1-click GST tax filing export.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Cross-Platform Native Android App & Responsive Web PWA",
+        "desc": "Production Android APK build powered by Ionic Capacitor for handheld POS devices with offline IndexedDB resilience, plus responsive desktop Chrome / iPad web portal.",
+        "status": "INCLUDED"
+      },
+      {
+        "module": "Firebase Cloud Backend, Multi-Device Sync & SSL Hosting",
+        "desc": "Google Cloud Firestore real-time database, Firebase Auth, automated cloud backups, sub-second multi-device sync, and high-speed SSL hosting — first year 100% FREE.",
+        "status": "INCLUDED"
+      }
+    ]
+  },
+  "financialSection": {
+    "title": "2. FINANCIAL TERMS & COMMERCIAL BREAKDOWN",
+    "currency": "INR",
+    "items": [
+      {
+        "title": "End-to-End StockFlow POS & Inventory ERP Platform Engineering",
+        "desc": "(Complete setup: POS terminal, batch tracking, barcode generator, purchases, khata CRM, Bluetooth printing, expense tracker, RBAC, Android APK & Web portal)",
+        "amountStr": "Rs.18,000",
+        "numericVal": 18000,
+        "type": "normal"
+      },
+      {
+        "title": "Special Inaugural Promotional Offer / Commercial Concession",
+        "desc": "(Exclusive introductory partnership discount extended specifically for Shiek Enterprises)",
+        "amountStr": "-Rs.3,000 [OFFER APPLIED]",
+        "numericVal": -3000,
+        "type": "offer"
+      },
+      {
+        "title": "Net Agreed Project Investment (50% Advance | 50% on Handover)",
+        "desc": "(Payable: 50% advance of Rs.7,500 on sign-off | 50% balance of Rs.7,500 upon delivery & staff training)",
+        "amountStr": "Rs.15,000 [NET PAYABLE]",
+        "numericVal": 15000,
+        "type": "highlight"
+      },
+      {
+        "title": "First Year Firebase Cloud Hosting, Database Provisioning & SSL Security",
+        "desc": "(Valid for 12 full months from production deployment and handover date)",
+        "amountStr": "FREE (Rs.0)",
+        "numericVal": 0,
+        "type": "free"
+      },
+      {
+        "title": "Complimentary 1-Year Bug Fixes, Security Updates & Technical Support",
+        "desc": "(Direct priority WhatsApp & Phone assistance during business hours)",
+        "amountStr": "INCLUDED (Rs.0)",
+        "numericVal": 0,
+        "type": "included"
+      },
+      {
+        "title": "Annual Maintenance, Cloud Database Renewal & Continued Support — from Year 2",
+        "desc": "(Covers cloud database sync, framework updates, automated backups & security patches — See Section 3)",
+        "amountStr": "Rs.1,299 / year",
+        "numericVal": 0,
+        "type": "recurring"
+      },
+      {
+        "title": "Optional Google Play Store Developer Registration",
+        "desc": "(One-time Rs.2,070 paid directly to Google for public store listing; direct Android APK install is FREE)",
+        "amountStr": "Direct by Client",
+        "numericVal": 0,
+        "type": "direct"
+      }
+    ],
+    "totalBannerText": "TOTAL PROJECT VALUE: Rs.18,000 INR | SPECIAL OFFER: -Rs.3,000 | NET PAYABLE: Rs.15,000 INR"
+  },
+  "customSections": [
+    {
+      "id": "sec_stockflow_rationale",
+      "title": "3. RECOMMENDED ANNUAL MAINTENANCE CHARGE — RATIONALE",
+      "bullets": [
+        {
+          "prefix": "Nominal Annual Fee from Year 2:",
+          "text": "Rs.1,299/year (approx. Rs.108/month) — Highly discounted maintenance package structured exclusively for Shiek Enterprises."
+        },
+        {
+          "prefix": "Firebase Hosting & Real-time Database:",
+          "text": "Covers Firestore reads/writes, real-time stock sync across multiple terminals, cloud data storage, and automated SSL certificate renewals."
+        },
+        {
+          "prefix": "Bug Fixes & Operating System Compatibility:",
+          "text": "Covers Android updates, Ionic/Angular framework security patches, thermal printer driver updates, and minor UI adjustments."
+        },
+        {
+          "prefix": "Unbeatable Value Comparison:",
+          "text": "Commercial POS/ERP platforms typically charge Rs.12,000–Rs.24,000/year in annual software licensing and cloud subscriptions. Flow's nominal Rs.1,299/year rate represents a long-term partnership commitment."
+        },
+        {
+          "prefix": "Payment Flexibility:",
+          "text": "Annual fee of Rs.1,299 will apply only from the 13th month onwards (first 12 months are 100% free)."
+        }
+      ]
+    },
+    {
+      "id": "sec_stockflow_policies",
+      "title": "4. FINANCIAL TERMS & IMPLEMENTATION POLICIES SUMMARY",
+      "bullets": [
+        {
+          "prefix": "Total Project Value & Special Offer:",
+          "text": "Standard platform fee of Rs.18,000 INR discounted by Rs.3,000 INR as an inaugural partnership offer, establishing a net payable investment of Rs.15,000 INR."
+        },
+        {
+          "prefix": "Payment Milestones:",
+          "text": "50% mobilization advance (Rs.7,500) upon agreement sign-off; remaining 50% (Rs.7,500) payable upon final production deployment, printer verification & staff handover."
+        },
+        {
+          "prefix": "12 Months Free Cloud Hosting:",
+          "text": "Firebase cloud infrastructure, real-time database, and SSL certificate are 100% complimentary for the first 12 months from delivery date, compliments of Flow."
+        },
+        {
+          "prefix": "Post Year-1 Nominal Maintenance:",
+          "text": "Annual cloud maintenance renewal of Rs.1,299/year will apply starting from month 13 onwards."
+        },
+        {
+          "prefix": "1-Year Comprehensive Warranty:",
+          "text": "All software bugs, calculation discrepancies, and system issues reported within 12 months of handover will be rectified promptly with zero additional charges."
+        },
+        {
+          "prefix": "Scope Boundaries:",
+          "text": "Any future custom modules outside the agreed 12 modules (such as e-commerce customer web store or third-party accounting integrations) will be scoped and quoted separately."
+        }
+      ]
+    },
+    {
+      "id": "sec_stockflow_support",
+      "title": "5. MAINTENANCE, SUPPORT & OPERATIONAL HANDOVER",
+      "bullets": [
+        {
+          "prefix": "Priority Technical Support:",
+          "text": "Direct phone and WhatsApp support via +91 8903424281 during business hours (Monday to Saturday, 9:00 AM – 7:00 PM IST)."
+        },
+        {
+          "prefix": "Staff Onboarding & Handover:",
+          "text": "Complete operational walkthrough covering POS billing shortcuts, barcode printing, batch purchase entry, khata ledger management, and day-end shift closing."
+        },
+        {
+          "prefix": "Data Ownership & Privacy:",
+          "text": "100% of product data, pricing, supplier records, customer lists, and financial transactions belong exclusively to Shiek Enterprises. Flow does not store or share customer data."
+        },
+        {
+          "prefix": "Hardware Compatibility Guarantee:",
+          "text": "Pre-tested compatibility with standard 58mm/80mm Bluetooth ESC/POS thermal printers, USB laser barcode scanners, and Android tablets/smartphones."
+        }
+      ]
+    }
+  ],
+  "signoff": {
+    "title": "SIGN-OFF & ACCEPTANCE",
+    "providerBox": {
+      "title": "For FLOW - SMART WEB & HYBRID APPS",
+      "subtitle": "(Service Provider)",
+      "repName": "Flow Representative",
+      "date": "November 19, 2026"
+    },
+    "clientBox": {
+      "title": "For SHIEK ENTERPRISES",
+      "subtitle": "(Client Representative)",
+      "repName": "Proprietor / Authorized Signatory",
+      "phone": "+91 9XXXXXXXXX",
+      "date": "November 19, 2026"
+    },
+    "legalNote": "Note: This document constitutes a legally binding service agreement upon signature by both parties. All amounts are in Indian Rupees (INR). Flow – Smart Web & Hybrid Apps reserves the right to pause or terminate services in case of non-payment beyond 30 days of the agreed due date."
+  }
+}

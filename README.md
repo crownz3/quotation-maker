@@ -50,6 +50,9 @@ Then open: **[http://localhost:4500](http://localhost:4500)** in any web browser
   - Customizable legally binding disclaimer note at bottom.
 
 ### 2. Built-in Templates / Presets
+- **StockFlow ERP (Shiek Enterprises)**: Complete POS, Multi-Batch Inventory Valuation (FIFO/LIFO/WAC), Bluetooth Thermal Printing & Billing system (Rs.18,000 total - Rs.3,000 offer = Rs.15,000 net).
+- **Electrical Vibers (VoltMaster)**: Electrician booking and hardware e-commerce platform.
+- **DeenDesk Madrasa ERP**: Full software buyout & multi-branch management agreement.
 - **Ammar Appa Mutton Shop**: Complete exact replica of `example-quotations.pdf` (all 16 modules, financial breakdown, annual maintenance rationale, policies, and sign-off).
 - **Standard Web & Mobile App**: Pre-configured scope for full-stack software development.
 - **E-Commerce & Retail Store**: Tailored for online shop, payment gateways, and delivery tracking.
